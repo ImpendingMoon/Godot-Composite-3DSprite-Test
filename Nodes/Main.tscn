@@ -1,0 +1,146 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nodes/CompositeSpriteContainer.tscn" type="PackedScene" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 10, 10 )
+
+[node name="Main" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, -4.37114e-08, 0.866025, 0.5, 7.57103e-08, 0.5, -0.866025, 0, 1.18805, -1.96771 )
+
+[node name="CompositeSpriteContainer" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.35, -0.861603 )
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="RandomizeAll" type="Button" parent="GUI"]
+margin_left = 17.0
+margin_top = 11.0
+margin_right = 81.0
+margin_bottom = 73.0
+text = "Random"
+
+[node name="Increment" type="Node" parent="GUI"]
+
+[node name="PlusBase" type="Button" parent="GUI/Increment"]
+margin_left = 10.0
+margin_top = 575.0
+margin_right = 74.0
+margin_bottom = 637.0
+text = "Base"
+
+[node name="PlusHair" type="Button" parent="GUI/Increment"]
+margin_left = 83.0
+margin_top = 575.0
+margin_right = 147.0
+margin_bottom = 637.0
+text = "Hair"
+
+[node name="PlusMouth" type="Button" parent="GUI/Increment"]
+margin_left = 155.0
+margin_top = 575.0
+margin_right = 219.0
+margin_bottom = 637.0
+text = "Mouth"
+
+[node name="PlusEyes" type="Button" parent="GUI/Increment"]
+margin_left = 227.0
+margin_top = 575.0
+margin_right = 291.0
+margin_bottom = 637.0
+text = "Eyes"
+
+[node name="PlusTop" type="Button" parent="GUI/Increment"]
+margin_left = 299.0
+margin_top = 575.0
+margin_right = 363.0
+margin_bottom = 637.0
+text = "Top"
+
+[node name="PlusBottom" type="Button" parent="GUI/Increment"]
+margin_left = 371.0
+margin_top = 575.0
+margin_right = 435.0
+margin_bottom = 637.0
+text = "Bottom"
+
+[node name="PlusAcc" type="Button" parent="GUI/Increment"]
+margin_left = 443.0
+margin_top = 575.0
+margin_right = 507.0
+margin_bottom = 637.0
+text = "Acc."
+
+[node name="Decrement" type="Node" parent="GUI"]
+
+[node name="MinusBase" type="Button" parent="GUI/Decrement"]
+margin_left = 10.0
+margin_top = 650.0
+margin_right = 74.0
+margin_bottom = 712.0
+text = "Base"
+
+[node name="MinusHair" type="Button" parent="GUI/Decrement"]
+margin_left = 83.0
+margin_top = 650.0
+margin_right = 147.0
+margin_bottom = 712.0
+text = "Hair"
+
+[node name="MinusMouth" type="Button" parent="GUI/Decrement"]
+margin_left = 155.0
+margin_top = 650.0
+margin_right = 219.0
+margin_bottom = 712.0
+text = "Mouth"
+
+[node name="MinusEyes" type="Button" parent="GUI/Decrement"]
+margin_left = 227.0
+margin_top = 650.0
+margin_right = 291.0
+margin_bottom = 712.0
+text = "Eyes"
+
+[node name="MinusTop" type="Button" parent="GUI/Decrement"]
+margin_left = 299.0
+margin_top = 650.0
+margin_right = 363.0
+margin_bottom = 712.0
+text = "Top"
+
+[node name="MinusBottom" type="Button" parent="GUI/Decrement"]
+margin_left = 371.0
+margin_top = 650.0
+margin_right = 435.0
+margin_bottom = 712.0
+text = "Bottom"
+
+[node name="MinusAcc" type="Button" parent="GUI/Decrement"]
+margin_left = 443.0
+margin_top = 650.0
+margin_right = 507.0
+margin_bottom = 712.0
+text = "Acc."
+
+[connection signal="pressed" from="GUI/RandomizeAll" to="CompositeSpriteContainer" method="_on_RandomizeAll_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusBase" to="CompositeSpriteContainer" method="_on_PlusBase_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusHair" to="CompositeSpriteContainer" method="_on_PlusHair_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusMouth" to="CompositeSpriteContainer" method="_on_PlusMouth_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusEyes" to="CompositeSpriteContainer" method="_on_PlusEyes_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusTop" to="CompositeSpriteContainer" method="_on_PlusTop_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusBottom" to="CompositeSpriteContainer" method="_on_PlusBottom_pressed"]
+[connection signal="pressed" from="GUI/Increment/PlusAcc" to="CompositeSpriteContainer" method="_on_PlusAcc_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusBase" to="CompositeSpriteContainer" method="_on_MinusBase_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusHair" to="CompositeSpriteContainer" method="_on_MinusHair_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusMouth" to="CompositeSpriteContainer" method="_on_MinusMouth_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusEyes" to="CompositeSpriteContainer" method="_on_MinusEyes_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusTop" to="CompositeSpriteContainer" method="_on_MinusTop_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusBottom" to="CompositeSpriteContainer" method="_on_MinusBottom_pressed"]
+[connection signal="pressed" from="GUI/Decrement/MinusAcc" to="CompositeSpriteContainer" method="_on_MinusAcc_pressed"]

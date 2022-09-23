@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Base.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/BaseBack.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Eyes.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Mouth.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Tops.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/TopsBack.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/BottomsBack.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Bottoms.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/AccessoriesBack.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Accessories.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/HairBack.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Graphics/ComponentSprites/Hair.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/CompositeSpriteContainer.gd" type="Script" id=14]
+
+[sub_resource type="GDScript" id=1]
+script/source = "#AUTHOR : ImpendingMoon
+#CREATED: 23 SEP 2022
+
+extends Sprite3D
+"
+
+[node name="CompositeSpriteContainer" type="Spatial"]
+script = ExtResource( 14 )
+
+[node name="Base" type="Sprite3D" parent="."]
+double_sided = false
+texture = ExtResource( 1 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="BaseBack" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+double_sided = false
+texture = ExtResource( 2 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Face" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001 )
+
+[node name="Eyes" type="Sprite3D" parent="Face"]
+double_sided = false
+texture = ExtResource( 3 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Mouth" type="Sprite3D" parent="Face"]
+double_sided = false
+texture = ExtResource( 4 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Hair" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002 )
+double_sided = false
+texture = ExtResource( 12 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="HairBack" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.002 )
+double_sided = false
+texture = ExtResource( 11 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Top" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.003 )
+double_sided = false
+texture = ExtResource( 5 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="TopBack" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.003 )
+double_sided = false
+texture = ExtResource( 6 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Bottom" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004 )
+double_sided = false
+texture = ExtResource( 8 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="BottomBack" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.004 )
+double_sided = false
+texture = ExtResource( 7 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="Accessory" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004 )
+double_sided = false
+texture = ExtResource( 10 )
+hframes = 5
+script = SubResource( 1 )
+
+[node name="AccessoryBack" type="Sprite3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.004 )
+double_sided = false
+texture = ExtResource( 9 )
+hframes = 5
+script = SubResource( 1 )
